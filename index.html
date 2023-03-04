@@ -1,6 +1,6 @@
 {% extends 'base.html' %} <!--uses <html> and <body> tags from base.html file-->
 
-  {% block headline %}EXPOSED: Vanderbilt Invests in Fossil Fuel Companies{% endblock headline %}
+  {% block headline %}LA Homicide Archive{% endblock headline %}
   {% block byline %}
   <strong>By:</strong> 
    <a href="https://www.abhinavskrishnan.com/"> Abhinav Krishnan</a>
@@ -9,3 +9,9 @@
   {% block pubdate %}
   <time datetime="2023-03-04" pubdate>Mar. 4, 2023</time>
   {% endblock pubdate %}
+
+  {% block content %}
+    {% for obj in harvard_park_homicides %} <!--brackets specify code to execute/logic signs-->
+        {{ obj.first_name }} {{ obj.last_name }} <br> <!--standard brackets indicate code to return-->
+    {% endfor %}
+  {% endblock %}
